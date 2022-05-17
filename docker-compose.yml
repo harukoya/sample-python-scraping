@@ -9,6 +9,8 @@ services:
       - /dev/shm:/dev/shm
   app:
     build: .
+    ports:
+      - 8888:8888
     volumes:
       - .:/app
     environment:
