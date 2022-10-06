@@ -5,3 +5,4 @@ BeautifulSoup4
 reppy
 feedparser
 scrapy
+mecab-python3

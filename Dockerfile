@@ -8,7 +8,14 @@ ENV LANGUAGE=en_US:en_US
 RUN apt-get update && apt-get install -y \
   mecab \
   libmecab-dev \
-  mecab-ipadic-utf8
+  mecab-ipadic-utf8 \
+  make \
+  sudo
+
+RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
+    mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -y && \
+    echo dicdir = `mecab-config --dicdir`"/mecab-ipadic-neologd" > /etc/mecabrc && \
+    sudo cp /etc/mecabrc /usr/local/etc
 
 WORKDIR /app
 
