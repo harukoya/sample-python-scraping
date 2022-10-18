@@ -6,3 +6,12 @@ reppy
 feedparser
 scrapy
 mecab-python3
+gensim
+pandas
+lxml
+matplotlib
+fbprophet
+slackweb
+pelican
+markdown
+ghp-import

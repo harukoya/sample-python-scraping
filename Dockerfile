@@ -21,4 +21,7 @@ WORKDIR /app
 
 COPY ./requirements.txt /tmp/requirements.txt
 
-RUN pip install -r /tmp/requirements.txt
+RUN pip uninstall pystan && \
+    pip3 install pystan~=2.14
+
+RUN pip3 install -r /tmp/requirements.txt
